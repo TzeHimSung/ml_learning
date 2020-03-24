@@ -14,7 +14,9 @@ def main():
     # test
     # huanhang
     # ''')
-    print(not False)
+    a = input()
+    a = chr(ord(a)+65-97)
+    print(a)
 
 
 if __name__ == '__main__':
