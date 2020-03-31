@@ -105,6 +105,16 @@ import math
 #     return s
 
 
+def fib(num):
+    n, a, b = 0, 0, 1
+    while n < num:
+        # print(b)
+        yield b
+        a, b = b, a+b
+        n = n+1
+    return 'done'
+
+
 def main():
     # a, b = input().split(' ')
     # a = int(a)
@@ -214,7 +224,16 @@ def main():
     # a = list(range(10))
     # for key, val in enumerate(a, 1):
     #     print(key, val)
-    print([x*x for x in range(1, 11) if x & 1 == 1])
+    # print([x*x for x in range(1, 11) if x & 1 == 1])
+    # print([m+n for m in 'ABC' for n in 'XYZ'])
+    # s = ['ABC', 'DIF', 'WE', 'WER']
+    # print([i.lower() for i in s])
+    # print([x if x % 2 == 0 else -x for x in range(1, 11)])
+    # L1 = ['Hello', 'World', 18, 'Apple', None]
+    # print([x for x in L1 if isinstance(x, (str))])
+    # gen = (x*x for x in range(1, 11))
+    # print([n for n in gen])
+    # fib(10)
 
 
 if __name__ == '__main__':
