@@ -2,7 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import math
+import sklearn
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from functools import reduce
+from scipy import sparse
 # from collections import Iterable
+# from collections import Callable
+from IPython.display import display
 
 
 # def myAbs(number):
@@ -105,14 +113,46 @@ import math
 #     return s
 
 
-def fib(num):
-    n, a, b = 0, 0, 1
-    while n < num:
-        # print(b)
-        yield b
-        a, b = b, a+b
-        n = n+1
-    return 'done'
+# def fib(num):
+#     n, a, b = 0, 0, 1
+#     while n < num:
+#         # print(b)
+#         yield b
+#         a, b = b, a+b
+#         n = n+1
+#     return 'done'
+
+
+def fn(x, y):
+    return x*10+y
+
+
+def char2num(s):
+    digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4,
+              '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
+    return digits[s]
+
+
+# def f(x):
+#     return x*x
+
+
+# def YHtri(line):
+#     yield [1]
+#     yield [1, 1]
+#     pre = [1, 1]
+#     j = 3
+#     while j <= line:
+#         now = [1, ]
+#         i = 0
+#         while i <= len(pre)-2:
+#             now.append(pre[i]+pre[i+1])
+#             i = i+1
+#         now.append(1)
+#         yield now
+#         pre = now
+#         j = j+1
+#     return 'Done'
 
 
 def main():
@@ -234,6 +274,53 @@ def main():
     # gen = (x*x for x in range(1, 11))
     # print([n for n in gen])
     # fib(10)
+    # for n in fib(10):
+    #     print(n)
+    # for n in YHtri(10):
+    #     print(n)
+    # s = set([x*x for x in range(10)])
+    # s2 = set([x for x in range(10)])
+    # print(s | s2)
+    # print(isinstance([], Iterable))
+    # print(isinstance((), Iterable))
+    # print(isinstance({}, Iterable))
+    # print(isinstance('', Iterable))
+    # print(isinstance(set([]), Iterable))
+    # x = np.array([[1, 2, 3], [4, 5, 6]])
+    # print("x:\n{}".format(x))
+    # eye = np.eye(4)
+    # print("This is eye in NumPy.\n{}".format(eye))
+    # sparse_matrix = sparse.csr_matrix(eye)
+    # print("This is eye_csr.\n{}".format(sparse_matrix))
+    # row_indices = np.arange(4)
+    # col_indices = np.arange(4)
+    # data = np.ones(4)
+    # eye_coo = sparse.coo_matrix((data, (row_indices, col_indices)))
+    # print("This is eye_coo.\n{}".format(eye_coo))
+    # row_ptr = [0, 1, 2, 3, 4]
+    # col = [0, 1, 2, 3]
+    # data = [1, 1, 1, 1]
+    # csr = sparse.csr_matrix((data, col, row_ptr))
+    # print("Test{}".format(csr))
+    # x = np.linspace(-10, 10, 100)
+    # y = np.sin(x)
+    # plt.plot(x, y, marker="x")
+    # plt.show()
+    # data = {
+    #     'Name': ["John", "Anna", "Peter", "Linda"],
+    #     'Location': ["New York", "Paris", "Berlin", "London"],
+    #     'Age': [24, 13, 53, 33]
+    # }
+    # data_pandas = pd.DataFrame(data)
+    # display(data_pandas)
+    # print("{}".format(sklearn.__version__))
+    # g = iter([1, 2, 3, 4, 5, 6])
+    # print([n for n in g])
+    # result = map(f, [x for x in range(10)])
+    # print([i for i in result])
+    # a = list(map(int, input().split(' ')))
+    # print(a)
+    print(reduce(fn, map(char2num, '98765')))
 
 
 if __name__ == '__main__':
