@@ -3,6 +3,7 @@
 
 import math
 import copy
+import time
 import sklearn
 import numpy as np
 import pandas as pd
@@ -154,6 +155,14 @@ from IPython.display import display
 #         pre = now
 #         j = j+1
 #     return 'Done'
+
+
+# def f(a,b):
+#     if not isinstance(a,(int)):
+#         raise TypeError
+#     if not isinstance(b,(int)):
+#         raise TypeError
+#     return a+b
 
 
 def main():
@@ -394,6 +403,53 @@ def main():
     # print(s1 | s2)
     # print(s1 - s2)
     # print(s1 ^ s2)
+    # f=open('test2.txt',mode='x',encoding='utf8')
+    # f.write('this is just a test 2')
+    # f.flush()
+    # f.close()
+    # with open('test2.txt','r') as f:
+    #     for line in f:
+    #         print(line)
+    # print(f.__name__)
+    # print(f.__class__)
+    # print(f(b=2,a=1))
+    # a=[0,10,2]
+    # print(list(range(*a)))
+    # a=[4,3,2,1]
+    # print(sorted(a))
+    # a=list(range(0,10))
+    # print(list(filter(lambda x: x%2==0,a)))
+    # a=[4,3,2,1]
+    # print(tuple(map(lambda x: x*x,a)))
+    # a=list(range(0,6,1))
+    # filter_result=list(filter(lambda x: x%2==0,a))
+    # map_result=list(map(lambda x: x**x,a))
+    # reduce_result=reduce(lambda a,b: a+b,a,0)
+    # print("{}, {}, {}".format(filter_result,map_result,reduce_result))
+
+    # def analyze(line):
+    #     dict_of_result={}
+    #     list_of_line=list(line.split())
+    #     list_of_brand_name=[]
+    #     for index,value in enumerate(list_of_line):
+    #         if index==len(list_of_line)-1:
+    #             dict_of_result['size']=value
+    #         elif index==len(list_of_line)-2:
+    #             dict_of_result['brand']=' '.join(list_of_brand_name)
+    #             dict_of_result['color']=value
+    #         else:
+    #             list_of_brand_name.append(value)
+    #     return dict_of_result
+    
+    # result=[]
+    # with open('test.txt','r') as f:
+    #     list_of_all_lines=f.readlines()
+    #     for current_line in list_of_all_lines:
+    #         result.append(analyze(current_line))
+    # result.sort(key=lambda elem: elem['size'])
+    # for element in result:
+    #     print(element)
+
 
 
 
