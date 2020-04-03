@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import math
+import copy
 import sklearn
 import numpy as np
 import pandas as pd
@@ -123,14 +124,14 @@ from IPython.display import display
 #     return 'done'
 
 
-def fn(x, y):
-    return x*10+y
+# def fn(x, y):
+#     return x*10+y
 
 
-def char2num(s):
-    digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4,
-              '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
-    return digits[s]
+# def char2num(s):
+#     digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4,
+#               '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
+#     return digits[s]
 
 
 # def f(x):
@@ -320,7 +321,80 @@ def main():
     # print([i for i in result])
     # a = list(map(int, input().split(' ')))
     # print(a)
-    print(reduce(fn, map(char2num, '98765')))
+    # print(reduce(fn, map(char2num, '98765')))
+    # s='iloveyou'
+    # print(s[::-1])
+    # a=[1,2,3,4,5]
+    # aa=[a,a,a]
+    # print(aa)
+    # a.append(6)
+    # print(aa)
+    # a.pop()
+    # aa=[list(a),list(a),list(a)]
+    # a.append(6)
+    # print(aa)
+    # a=[1,2,3,4,5]
+    # print(id(a))
+    # aa=[a,a,a]
+    # print(id(aa[0]))
+    # bb=[list(a),list(a),list(a)]
+    # bb=[copy.copy(a),copy.copy(a),copy.copy(a)]
+    # print(id(bb[0]))
+    # a=100
+    # b=a
+    # print(id(a),id(b))
+    # a=[1,2,3]
+    # b=copy.deepcopy(a)
+    # print('a id is',id(a))
+    # print('b id is',id(b))
+    # print('a[0] id is',id(a[0]))
+    # print('b[0] id is',id(b[0]))
+    # a[0]=2
+    # b[0]=2
+    # print('a id is',id(a))
+    # print('b id is',id(b))
+    # print(id(a[0]))
+    # print(id(b[0]))
+    # print(id(a[1]))
+    # print(id(b[1]))
+    # print(id(1))
+    # a=[[1,2,3],[1,2,3],[1,2,3]]
+    # b=copy.deepcopy(a)
+    # print(id(a))
+    # print(id(b))
+    # print(id(a[0]))
+    # print(id(b[0]))
+    # b=copy.copy(a)
+    # print(id(a))
+    # print(id(b))
+    # print(id(a[0]))
+    # print(id(b[0]))
+    # a=(1,2,3)
+    # b=copy.copy(a)
+    # print(id(a))
+    # print(id(b))
+    # b=copy.deepcopy(a)
+    # print(id(a))
+    # print(id(b))
+    # a_string="abcde"
+    # print(a_string,end=',')
+    # print(a_string,end='\n')
+    # ddict={1:'123',2:'234',3:'345'}
+    # for idx,val in enumerate(ddict):
+    #     print(idx,val)
+    # a=input()
+    # for ch in a:
+    #     if ch>='a' and ch<='z':
+    #         print(chr(ord('a')+(ord(ch)-ord('a')+2)%26),end='')
+    #     else:
+    #         print(ch,end='')
+    # s1=set(range(3))
+    # s2=set(range(2,5))
+    # print(s1 & s2)
+    # print(s1 | s2)
+    # print(s1 - s2)
+    # print(s1 ^ s2)
+
 
 
 if __name__ == '__main__':
