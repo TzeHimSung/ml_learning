@@ -4,6 +4,7 @@
 import math
 import copy
 import time
+import sys
 import sklearn
 import numpy as np
 import pandas as pd
@@ -163,6 +164,23 @@ from IPython.display import display
 #     if not isinstance(b,(int)):
 #         raise TypeError
 #     return a+b
+
+
+# class Person:
+#     def __init__(self,name):
+#         self.name=name
+
+#     def introduce(self):
+#         print('Hello, my name is {}'.format(self.name))
+
+
+# class Engineer(Person):
+#     def __init__(self,name,position):
+#         self.position=position
+#         Person.__init__(self,name)
+
+#     def greet(self):
+#         print('Hello, my name is {} and I am a {} engineer!'.format(self.name,self.position))
 
 
 def main():
@@ -450,7 +468,56 @@ def main():
     # for element in result:
     #     print(element)
 
+    # def time_fun(real_fun):
+    #     def wrapper():
+    #         print('start time: {}'.format(time.time()))
+    #         real_fun()
+    #         print('end time: {}'.format(time.time()))
 
+    #     return wrapper
+
+    # @time_fun
+    # def fun():
+    #     print('this is funny')
+
+    # fun()
+
+
+    # def log(text):
+    #     def decorator(func):
+    #         def wrapper(*args,**kwargs):
+    #             print("{} {}():".format(text,func.__name__))
+    #             return func(*args,**kwargs)
+    #         return wrapper
+    #     return decorator
+
+    # @log('execute')
+    # def now():
+    #     print("{}".format(time.time()))
+
+    # now()
+
+
+    # def addPrintLog(log):
+    #     def decorator(func):
+    #         def wrapper(*args,**kwargs):
+    #             print("{} {}():".format(log,func.__name__))
+    #             return func(*args,**kwargs)
+    #         return wrapper
+    #     return decorator
+
+    # @addPrintLog('exec')
+    # def testFunc(times):
+    #     print('this function runs {} time(s)!'.format(times))
+
+    # testFunc(2)
+
+
+    # jack=Person('jack')
+    # print(dir(jack))
+    # jack=Engineer('jack','shenzhen')
+    # jack.greet()
+    # jack.introduce()
 
 
 if __name__ == '__main__':
