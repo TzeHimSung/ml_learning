@@ -9,7 +9,7 @@ import sklearn
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from functools import reduce
+import functools
 from scipy import sparse
 # from collections import Iterable
 # from collections import Callable
@@ -458,7 +458,7 @@ def main():
     #         else:
     #             list_of_brand_name.append(value)
     #     return dict_of_result
-    
+
     # result=[]
     # with open('test.txt','r') as f:
     #     list_of_all_lines=f.readlines()
@@ -482,7 +482,6 @@ def main():
 
     # fun()
 
-
     # def log(text):
     #     def decorator(func):
     #         def wrapper(*args,**kwargs):
@@ -496,7 +495,6 @@ def main():
     #     print("{}".format(time.time()))
 
     # now()
-
 
     # def addPrintLog(log):
     #     def decorator(func):
@@ -512,13 +510,11 @@ def main():
 
     # testFunc(2)
 
-
     # jack=Person('jack')
     # print(dir(jack))
     # jack=Engineer('jack','shenzhen')
     # jack.greet()
     # jack.introduce()
-
 
     # def is_odd(n):
     #     return n%2==1
@@ -529,7 +525,6 @@ def main():
     #     return a+b
 
     # print(add(1,2))
-
 
     # class Solution:
     #     def minDistance(self, word1: str, word2: str) -> int:
@@ -545,7 +540,7 @@ def main():
     #             dp[i][0]=i
     #         for i in range(m+1):
     #             dp[0][i]=i
-            
+
     #         for i in range(1,n+1):
     #             for j in range(1,m+1):
     #                 if word1[i-1]==word2[j-1]:
@@ -554,7 +549,6 @@ def main():
     #                     dp[i][j]=min(dp[i-1][j-1],dp[i][j-1],dp[i-1][j])+1
 
     #         return dp[n][m]
-
 
     # def not_empty(s:list):
     #     return s and s.strip()
@@ -585,11 +579,76 @@ def main():
     #     else:
     #         break
 
-
     # a=list(range(-10,10,2))
     # print(sorted(a,key=abs,reverse=False))
     # print(sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower))
-    
+
+    # def calc_sum(*args):
+    #     ret=0
+    #     for i in args:
+    #         ret=ret+i
+    #     return ret
+
+    # print(calc_sum(*list(range(1,11,1))))
+
+    # def count():
+    #     def f(j):
+    #         def g():
+    #             return j*j
+    #         return g
+    #     fs=[]
+    #     for i in range(1,4):
+    #         fs.append(f(i))
+    #     return fs
+
+    # f1,f2,f3=count()
+    # print(f1())
+    # print(f2())
+    # print(f3())
+
+    # def createCounter():
+    #     def generator():
+    #         a=1
+    #         yield a
+    #         while True:
+    #             a+=1
+    #             yield a
+
+    #     g=generator()
+
+    #     def counter():
+    #         return next(g)
+
+    #     return counter
+
+    # cnt=createCounter()
+    # for i in range(1,11,1):
+    #     print(cnt())
+
+    # print(list(map(lambda x: x**2,list(range(1,10)))))
+
+    # def log(func):
+    #     @functools.wraps(func)
+    #     def wrapper(*args, **kwargs):
+    #         print('call {}():'.format(func.__name__))
+    #         return func(*args, **kwargs)
+    #     return wrapper
+
+    # def log(text):
+    #     def decorator(func):
+    #         @functools.wraps(func)
+    #         def wrapper(*args, **kwargs):
+    #             print('{} {}():'.format(text, func.__name__))
+    #             return func(*args, **kwargs)
+    #         return wrapper
+    #     return decorator
+
+    # @log('exec')
+    # def f(a, b, c):
+    #     return max(a, b, c)
+
+    # print(f(1, 2, 3))
+
 
 if __name__ == '__main__':
     main()
