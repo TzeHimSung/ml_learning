@@ -520,5 +520,76 @@ def main():
     # jack.introduce()
 
 
+    # def is_odd(n):
+    #     return n%2==1
+
+    # print(list(filter(is_odd,list(range(10)))))
+
+    # def add(a:int, b:int)->int:
+    #     return a+b
+
+    # print(add(1,2))
+
+
+    # class Solution:
+    #     def minDistance(self, word1: str, word2: str) -> int:
+    #         n=len(word1)
+    #         m=len(word2)
+    #         dp=[]
+    #         for i in range(n+1):
+    #             dp.append([])
+    #             for j in range(m+1):
+    #                 dp[i].append(0)
+
+    #         for i in range(n+1):
+    #             dp[i][0]=i
+    #         for i in range(m+1):
+    #             dp[0][i]=i
+            
+    #         for i in range(1,n+1):
+    #             for j in range(1,m+1):
+    #                 if word1[i-1]==word2[j-1]:
+    #                     dp[i][j]=dp[i-1][j-1]
+    #                 else:
+    #                     dp[i][j]=min(dp[i-1][j-1],dp[i][j-1],dp[i-1][j])+1
+
+    #         return dp[n][m]
+
+
+    # def not_empty(s:list):
+    #     return s and s.strip()
+
+    # print(list(filter(not_empty,['A', '', 'B', None, 'C', '  '])))
+
+    # python 欧拉筛
+    # def odd_iter():
+    #     n=1
+    #     while True:
+    #         n=n+2
+    #         yield n
+
+    # def not_divisible(n):
+    #     return lambda x: x%n>0
+
+    # def getPrime():
+    #     yield 2
+    #     it=odd_iter()
+    #     while True:
+    #         n=next(it)
+    #         yield n
+    #         it=filter(not_divisible(n),it)
+
+    # for i in getPrime():
+    #     if i<1000:
+    #         print("{}".format(i),end=' ')
+    #     else:
+    #         break
+
+
+    # a=list(range(-10,10,2))
+    # print(sorted(a,key=abs,reverse=False))
+    # print(sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower))
+    
+
 if __name__ == '__main__':
     main()
