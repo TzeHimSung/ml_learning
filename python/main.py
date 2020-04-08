@@ -664,6 +664,18 @@ def main():
 
     #         matrix[:] = matrix2[:]
 
+    # for i in range(1, 10):
+    #     for j in range(1, i+1):
+    #         print("{} * {} = {}".format(i, j, i*j), end='  ')
+    #     print(end='\n')
+
+    temperature = input('Please input the temperature:')
+    try:
+        temperatureUnit = temperature[-1]
+        temperature = float(temperature[:-1])
+        if temperatureUnit == 'F':
+    except：
+
 
 if __name__ == '__main__':
     main()
