@@ -669,12 +669,31 @@ def main():
     #         print("{} * {} = {}".format(i, j, i*j), end='  ')
     #     print(end='\n')
 
-    temperature = input('Please input the temperature:')
+    temperature = input('Please input the temperature, such as 100C or 128F: ')
     try:
-        temperatureUnit = temperature[-1]
+        # input format check
+        if temperature == '' or len(temperature) == 1:
+            raise ValueError('Input format error!')
+        # convert input
+        temperatureUnit = temperature[-1].upper()
         temperature = float(temperature[:-1])
-        if temperatureUnit == 'F':
-    except：
+        # temperature unit check
+        if temperatureUnit != 'C' and temperatureUnit != 'F':
+            raise ValueError('Temperature unit is wrong!')
+        # calculate and print answer
+        if temperatureUnit == 'C':
+            temperature = temperature*1.8+32
+            temperatureUnit = 'F'
+        else:
+            temperature = (temperature-32)/1.8
+            temperatureUnit = 'C'
+        print('It equals to {}{}'.format(temperature, temperatureUnit))
+
+    except ValueError as ve:
+        print('Error:', ve)
+
+    finally:
+        print('Program finished.')
 
 
 if __name__ == '__main__':
