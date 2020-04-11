@@ -719,6 +719,11 @@ def main():
     #                 dp[i] += dp[i-1]+1
     #         return cnt
 
+    # n = 3
+    # a = [[] * n for i in range(n)]
+    # aa = [a for i in range(n)]
+    # print(aa)
+
 
 if __name__ == '__main__':
     main()
