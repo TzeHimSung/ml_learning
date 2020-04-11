@@ -704,6 +704,21 @@ def main():
     # print(id(1))
     # 以上结果相同
 
+    # n = 3
+    # dp = [0]*n
+    # dp = dp*n
+    # print(dp)
+
+    # class Solution:
+    #     def superEggDrop(self, K: int, N: int) -> int:
+    #         dp = [0]*(K+1)
+    #         cnt = 0
+    #         while (dp[K] < N):
+    #             cnt += 1
+    #             for i in range(K, 0, -1):
+    #                 dp[i] += dp[i-1]+1
+    #         return cnt
+
 
 if __name__ == '__main__':
     main()
