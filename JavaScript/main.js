@@ -45,3 +45,10 @@
 // }
 
 // console.log(Person.getFullName.call(Person1, 1))
+// var a, b, c = 1
+// console.log(a)
+// console.log(b)
+// console.log(c)
+// var a = 1
+// var a
+// console.log(a)
