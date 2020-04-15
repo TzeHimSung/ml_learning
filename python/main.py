@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import pdb
 'this module used for python3 learning'
 
 import math
@@ -916,23 +917,282 @@ from IPython.display import display
 #     for name, member in Month.__members__.items():
 #         print(name, '=>', member, ',', member.value)
 
-from enum import Enum, unique
+# from enum import Enum, unique
+
+# @unique
+# class Weekly(Enum):
+#     Sun = 0
+#     Mon = 1
+#     Tue = 2
+#     Wed = 3
+#     Thu = 4
+#     Fri = 5
+#     Sat = 6
 
 
-@unique
-class Weekly(Enum):
-    Sun = 0
-    Mon = 1
-    Tue = 2
-    Wed = 3
-    Thu = 4
-    Fri = 5
-    Sat = 6
+# def main():
+#     print(Weekly.Mon)
+
+# class Hello(object):
+#     def hello(self, name='world'):
+#         print('Hello, {}'.format(name))
 
 
-def main():
-    print(Weekly.Mon)
+# def main():
+# def fn(self, name='world'):
+#     print('Hello, {}'.format(name))
+
+# Hello = type('Hello', (object,), dict(hello=fn))
+# h = Hello()
+# h.hello()
+
+# class ListMetaclass(type):
+#     def __new__(cls, name, bases, attrs):
+#         attrs['add'] = lambda self, value: self.append(value)
+#         return type.__new__(cls, name, bases, attrs)
+
+# class MyList(list, metaclass=ListMetaclass):
+#     pass
+
+# def main():
+#     l = MyList()
+#     l.append(1)
+#     print(l)
+
+# using metaclass in databases coding
+
+# class Field(object):
+#     def __init__(self, name, column_type):
+#         self.name = name
+#         self.column_type = column_type
+
+#     def __str__(self):
+#         return '<{}:{}>'.format(self.__class__, self.name)
+
+
+# class StringField(Field):
+#     def __init__(self, name):
+#         super(StringField, self).__init__(name, 'varchar(100)')
+
+
+# class IntegerField(Field):
+#     def __init__(self, name):
+#         super(IntegerField, self).__init__(name, 'bigint')
+
+
+# class ModelMetaclass(type):
+#     def __new__(cls, name, bases, attrs):
+#         if name == 'Model':
+#             return type.__new__(cls, name, bases, attrs)
+#         print('Found model: {}'.format(name))
+#         mappings = dict()
+#         for k, v in attrs.items():
+#             if isinstance(v, Field):
+#                 print('Found mapping: {} ==> {}'.format(k, v))
+#                 mappings[k] = v
+#         for k in mappings.keys():
+#             attrs.pop(k)
+#         attrs['__mappings__'] = mappings
+#         attrs['__table__'] = name
+#         return type.__new__(cls, name, bases, attrs)
+
+
+# class Model(dict, metaclass=ModelMetaclass):
+#     def __init__(self, **kwargs):
+#         super(Model, self).__init__(**kwargs)
+
+#     def __getattr__(self, key):
+#         try:
+#             return self[key]
+#         except KeyError:
+#             raise AttributeError(
+#                 r"'Model' object has no attribute '{}'".format(key))
+
+#     def __setattr__(self, key, value):
+#         self[key] = value
+
+#     def save(self):
+#         fields = []
+#         params = []
+#         args = []
+#         for k, v in self.__mappings__.items():
+#             fields.append(v.name)
+#             params.append('?')
+#             args.append(getattr(self, k, None))
+#         sql = 'insert into {} ({}) values ({})'.format(
+#             self.__table__, ','.join(fields), ','.join(params))
+#         print('SQL: {}'.format(sql))
+#         print('ARGS: {}'.format(args))
+
+
+# class User(Model):
+#     id = IntegerField('id')
+#     name = StringField('username')
+#     email = StringField('email')
+#     password = StringField('password')
+
+
+# def main():
+#     u = User(id=1234, name='Michael', email='test@test.com', password='my-pwd')
+#     u.save()
+
+# import logging
+
+# def foo(s):
+#     return 10/int(s)
+
+# def bar(s):
+#     return foo(s)*2
+
+# def main():
+#     try:
+#         bar('0')
+#     except Exception as e:
+#         logging.exception(e)
+
+# def foo(s):
+#     n = int(s)
+#     assert n != 0, 'n is zero!'
+#     return 10/n
+
+# def main():
+#     foo('0')
+
+# import logging
+# logging.basicConfig(level=logging.INFO)
+
+# def main():
+#     s = '0'
+#     n = int(s)
+#     pdb.set_trace()
+#     logging.info('n = {}'.format(n))
+#     print(10/n)
+
+# import unittest
+
+# class Dict(dict):
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+
+#     def __getattr__(self, key):
+#         try:
+#             return self[key]
+#         except KeyError:
+#             raise AttributeError(
+#                 r"'Dict' object has no attribute '{}'".format(key))
+
+#     def __setattr__(self, key, value):
+#         self[key] = value
+
+# class TestDict(unittest.TestCase):
+#     def test_init(self):
+#         d = Dict(a=1, b='test')
+#         self.assertEqual(d.a, 1)
+#         self.assertEqual(d.b, 'test')
+#         self.assertTrue(isinstance(d, dict))
+
+#     def test_key(self):
+#         d = Dict()
+#         d['key'] = 'value'
+#         self.assertEqual(d.key, 'value')
+
+#     def test_attr(self):
+#         d = Dict()
+#         d.key = 'value'
+#         self.assertTrue('key' in d)
+#         self.assertEqual(d['key'], 'value')
+
+#     def test_keyerror(self):
+#         d = Dict()
+#         with self.assertRaises(KeyError):
+#             value = d['empty']
+
+#     def test_attrerror(self):
+#         d = Dict()
+#         with self.assertRaises(AttributeError):
+#             value = d.empty
+
+# from io import StringIO
+
+# def main():
+#     f = StringIO()
+#     f.write('hello\nhello\n')
+#     print(f.getvalue())
+
+# import os
+
+# def main():
+# print(os.environ)
+# print(os.path.abspath('.'))
+# print(os.path.join('c:\\ProgramFiles', 'testdir'))
+# print(os.path.split('c:\\ProgramFiles\\test.txt'))
+# print(os.path.splitext('c:\\ProgramFiles\\test.txt'))
+# print([x for x in os.listdir('.') if os.path.isdir(x)])
+# print([x for x in os.listdir('.') if os.path.isfile(
+#     x) and os.path.splitext(x)[1] == '.py'])
+
+# import pickle
+
+# def main():
+#     d = dict(name='bob', age=20, score=80)
+# pickle.dumps(d)
+
+# import json
+
+# def main():
+#     d = dict(name='bob', age=20, score=80)
+#     print(json.dumps(d))
+
+# import os
+
+# def main():
+#     print('Process {} start...'.format(os.getpid()))
+#     pid = os.fork()
+#     if (pid == 0):
+#         print('I am child process {} and my parent is {}'.format(
+#             os.getpid(), os.getppid()))
+#     else:
+#         print('I am {} and my child is {}'.format(os.getpid(), pid))
+
+# from multiprocessing import Process
+# import os
+
+# def run_proc(name):
+#     print('Run child process %s (%s)...' % (name, os.getpid()))
+
+# def main():
+#     print('Parent process %s.' % os.getpid())
+#     p = Process(target=run_proc, args=('test',))
+#     print('Child process will start.')
+#     p.start()
+#     p.join()
+#     print('Child process end.')
+
+# from multiprocessing import Pool
+# import os
+# import time
+# import random
+
+# def long_time_task(name):
+#     print('Run task %s (%s)...' % (name, os.getpid()))
+#     start = time.time()
+#     time.sleep(random.random() * 3)
+#     end = time.time()
+#     print('Task %s runs %0.2f seconds.' % (name, (end - start)))
+
+# def main():
+#     print('Parent process %s.' % os.getpid())
+#     p = Pool(4)
+#     for i in range(5):
+#         p.apply_async(long_time_task, args=(i,))
+#     print('Waiting for all subprocesses done...')
+#     p.close()
+#     p.join()
+#     print('All subprocesses done.')
 
 
 if __name__ == '__main__':
     main()
+    # unittest.main()
+
+# print('END')
