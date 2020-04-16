@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import pdb
 'this module used for python3 learning'
 
-import math
-import copy
-import time
-import sys
-import sklearn
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import functools
-from scipy import sparse
+# import pdb
+# import math
+# import copy
+# import time
+# import sys
+# import sklearn
+# import numpy as np
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# import functools
+# from scipy import sparse
 # from collections import Iterable
 # from collections import Callable
-from IPython.display import display
+# from IPython.display import display
 
 
 # def myAbs(number):
