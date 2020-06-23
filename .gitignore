@@ -7,3 +7,5 @@ tmp.png
 *.csv
 cache
 data
+variables*
+latest
