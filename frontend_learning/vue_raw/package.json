@@ -1,0 +1,18 @@
+{
+  "name": "vue_raw",
+  "version": "1.0.0",
+  "description": "vue tech raw",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "raw"
+  ],
+  "author": "JHSeng",
+  "license": "MIT",
+  "dependencies": {
+    "bkui-cli": "^0.1.4"
+  }
+}
