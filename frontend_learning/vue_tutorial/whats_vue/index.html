@@ -41,7 +41,10 @@
 
     <div id="app_7">
         <ol>
-            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+            <!-- 这里v-bind:todo是因为组件唯一一个prop名为todo -->
+            <!-- 直接传入item对象，组件返回item.text并渲染 -->
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+            </todo-item>
         </ol>
     </div>
 

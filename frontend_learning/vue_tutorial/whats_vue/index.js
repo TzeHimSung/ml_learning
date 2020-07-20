@@ -1,11 +1,12 @@
 var app = new Vue({
-    // 作用对象？
+    // 作用对象
     el: '#app_1',
     data: {
         message: 'Hello Vue! 您好，Vue!'
     }
 })
 
+// 利用v-bind实现动态绑定
 var app2 = new Vue({
     el: '#app_2',
     data: {
@@ -13,6 +14,7 @@ var app2 = new Vue({
     }
 })
 
+// 利用v-if控制DOM对象是否可见
 var app3 = new Vue({
     el: '#app_3',
     data: {
@@ -20,6 +22,7 @@ var app3 = new Vue({
     }
 })
 
+// 利用v-for渲染列表
 var app4 = new Vue({
     el: '#app_4',
     data: {
@@ -31,6 +34,7 @@ var app4 = new Vue({
     }
 })
 
+// 利用v-on监听事件
 var app5 = new Vue({
     el: '#app_5',
     data: {
@@ -43,6 +47,7 @@ var app5 = new Vue({
     }
 })
 
+// 双向绑定
 var app6 = new Vue({
     el: '#app_6',
     data: {
@@ -50,6 +55,7 @@ var app6 = new Vue({
     }
 })
 
+// 定义一个vue组件
 Vue.component('todo-item', {
     props: ['todo'],
     template: '<li>{{ todo.text }}</li>'
