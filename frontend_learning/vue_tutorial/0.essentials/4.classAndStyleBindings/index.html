@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 类型绑定示例 -->
+        <!-- 如果text-danger不加引号，则整行错误 -->
+        <div v-bind:class="{active: isActive, 'text-danger': haserror}"></div>
+        <!-- 用计算属性会更加方便 -->
+        <div v-bind:class="classObject"></div>
+        <div v-bind:style="{color: activeColor, fontSize: fontSize + 'px'}"></div>
+    </div>
+</body>
+
+<script src="index.js"></script>
+
+</html>

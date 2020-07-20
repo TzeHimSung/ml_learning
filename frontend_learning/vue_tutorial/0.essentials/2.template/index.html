@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 下面这个值因为一次性插值，所以不会改变 -->
+        <span v-once>Message: {{msg}}</span>
+        <p>Using mustaches: {{rawhtml}}</p>
+        <!-- 使用v-html把字符串解析为html文本 -->
+        <p>Using v-html directive: <span v-html="rawhtml"></span></p>
+        <!-- 通过v-bind把标签属性值绑定到vm的具体data中 -->
+        <button v-bind:disabled="isbuttondisabled">Button</button>
+        <!-- 通过v-if计算表达式的真假来插入/移除DOM元素 -->
+        <p v-if="seen">Now you can see me</p>
+        <!-- 这里可以注意下#动态参数，很屌 -->
+        <!-- https://cn.vuejs.org/v2/guide/syntax.html -->
+
+        <!-- v-bind和v-on的缩写 -->
+        <a v-bind:href="url">this is an url</a>
+        <a :href="url">this is also an url</a>
+
+        <a v-on:click="btnclick">sth1</a>
+        <a @click="btnclick">sth2</a>
+
+    </div>
+
+</body>
+
+<script src="index.js"></script>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in items" :key="item.message">{{item.message}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item, index) in items">
+                {{pm}} - {{index}} - {{item.message}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(value, name, index) in detail">
+                {{index}}.{{name}}: {{value}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="n in evenNumbers">{{n}}</li>
+        </ul>
+        <ul v-for="set in sets">
+            <li v-for="n in even(set)">{{n}}</li>
+        </ul>
+        <div>
+            <span v-for="n in 10">{{n}}</span>
+        </div>
+        <ul>
+            <template v-for="item in items" v-if="item.isp === true">
+                <li>{{item.message}}</li>
+            </template>
+        </ul>
+    </div>
+
+    <div id="todo-list-example">
+        <form v-on:submit.prevent="addNewTodo">
+            <label for="new-todo">Add a todo</label>
+            <input v-model="newTodoText" id="new-todo" placeholder="E.g. Feed the cat">
+            <button>Add</button>
+        </form>
+        <ul>
+            <li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:title="todo.title"
+                v-on:remove="todos.splice(index,1)">
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script src="index.js"></script>
+
+</html>
