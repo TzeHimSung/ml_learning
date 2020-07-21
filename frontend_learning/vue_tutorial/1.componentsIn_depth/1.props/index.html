@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 注意prop的大小写问题，html中的attribute对大小写不敏感 -->
+        <blog-post post-title="this is a title"></blog-post>
+        <!-- 如果这里没有v-bind，num1/num2接收的就是字符串了 -->
+        <comp v-bind:num1="1" v-bind:num2="2" des="the result is"></comp>
+        <br>
+        <!-- 如果prop没有绑定其他变量或赋值，Boolean类型默认为true -->
+        <bool-test flag></bool-test>
+        <bool-test :flag="false"></bool-test>
+        <br>
+        <!-- 把对象的所有参数当作prop传入组件 -->
+        <getallp v-bind="obj"></getallp>
+        <!-- 跟下面这行等价 -->
+        <getallp :id="obj.id" :title="obj.title"></getallp>
+        <br>
+        <button @click="addone">add</button>
+        <button @click="clear">clear</button>
+        <br>
+        <base-input label="label" :value="123"></base-input>
+    </div>
+</body>
+
+<script src="index.js"></script>
+
+</html>
