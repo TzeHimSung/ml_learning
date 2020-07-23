@@ -39,5 +39,8 @@ var vm = new Vue({
             alert(this.$refs.refcomp1.a)
             this.$refs.refcomp1.$refs.inp.focus()
         }
+    },
+    provide: {
+
     }
 })
